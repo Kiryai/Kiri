@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class StopWatch(tk.Frame):
+class Timer(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master
@@ -25,10 +25,10 @@ class StopWatch(tk.Frame):
         self.reset_button = tk.Button(self, text="Сброс", command=self.reset)
         self.reset_button.pack(side="left")
 
-        self.lap_button = tk.Button(self, text="Лап", command=self.lap)
+        self.lap_button = tk.Button(self, text="Круг", command=self.lap)
         self.lap_button.pack(side="left")
 
-        self.laps_label = tk.Label(self, text="Лапы:")
+        self.laps_label = tk.Label(self, text="Круги:")
         self.laps_label.pack()
 
         self.laps_text = tk.Text(self, height=10, width=20)
@@ -68,5 +68,5 @@ class StopWatch(tk.Frame):
         self.master.after(1000, self.update_timer)
 
 root = tk.Tk()
-app = StopWatch(master=root)
+app = Timer(master=root)
 app.mainloop()
